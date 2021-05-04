@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TikiCrawler", "TikiCrawler\TikiCrawler.csproj", "{84195989-18EA-48B0-9686-60EA470B6860}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84195989-18EA-48B0-9686-60EA470B6860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84195989-18EA-48B0-9686-60EA470B6860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84195989-18EA-48B0-9686-60EA470B6860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84195989-18EA-48B0-9686-60EA470B6860}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6FCDE883-4338-421C-890F-A7E04561AAFD}
+	EndGlobalSection
+EndGlobal
