@@ -85,11 +85,12 @@ namespace TikiCrawler
 
             List<ProductWooCommerce> listProduct = new List<ProductWooCommerce>();
             //Go to each product link
-            for (int i = 0; i <= listProductLink.Count; i++)
+            for (int i = 0; i <= listProductLink.Count-1; i++)
             {
                 ProductTiki result = new ProductTiki();
                 //Go to product link
                 browser.Navigate().GoToUrl(listProductLink[i]);
+                break;
 
                 //Extract product information by CSS Selector
                 string productTitle = browser.FindElements(By.CssSelector(".title"))[0].Text;
