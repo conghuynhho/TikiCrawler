@@ -13,7 +13,7 @@ namespace TikiCrawler
         public ProductWooCommerce mapDataToWooCommerce(ProductTiki inputProduct)
         {
             ProductWooCommerce outputProduct = new ProductWooCommerce();
-            outputProduct.ID = Guid.NewGuid().ToString();
+            outputProduct.ID = "";
             outputProduct.Type = "simple";
             outputProduct.SKU = inputProduct.SKU;
             outputProduct.Name = inputProduct.Title;
@@ -60,10 +60,8 @@ namespace TikiCrawler
         {
             //Create an instance of Chrome driver
             IWebDriver browser = new ChromeDriver();
-
             //Navigate to website Tiki.vn > Laptop category
             browser.Navigate().GoToUrl("https://tiki.vn/laptop/c8095");
-
             //Select all product items by CSS Selector
             List<string> listProductLink = new List<string>();
             var products = browser.FindElements(By.CssSelector(".product-item"));
@@ -90,10 +88,11 @@ namespace TikiCrawler
                 ProductTiki result = new ProductTiki();
                 //Go to product link
                 browser.Navigate().GoToUrl(listProductLink[i]);
-
                 System.Threading.Thread.Sleep(1000);
                 //Extract product information by CSS Selector
+
                 string productTitle = browser.FindElements(By.CssSelector(".title"))[0].Text;
+
                 //Extract product brand by CSS Selector then remove redundant data by Regular Expression
                 string productBrand = browser.FindElements(By.CssSelector(".brand-and-author"))[0].GetAttribute("outerHTML");
                 productBrand = Regex.Match(productBrand, "brand\">(.*?)</a>").Groups[1].Value;
@@ -158,6 +157,9 @@ namespace TikiCrawler
             }
             var engine = new FileHelperEngine<ProductWooCommerce>();
             engine.WriteFile("F:/output.txt", listProduct);
+
+
+
             //Console.WriteLine(products.Count);
             //System.IO.StreamWriter writer = new System.IO.StreamWriter("D:\\tiki.csv", false, System.Text.Encoding.UTF8);
             //writer.WriteLine("ProductName\tImageLink");
