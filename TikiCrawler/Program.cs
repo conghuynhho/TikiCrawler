@@ -90,8 +90,8 @@ namespace TikiCrawler
                 ProductTiki result = new ProductTiki();
                 //Go to product link
                 browser.Navigate().GoToUrl(listProductLink[i]);
-                break;
 
+                System.Threading.Thread.Sleep(1000);
                 //Extract product information by CSS Selector
                 string productTitle = browser.FindElements(By.CssSelector(".title"))[0].Text;
                 //Extract product brand by CSS Selector then remove redundant data by Regular Expression
